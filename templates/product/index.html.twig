@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Все товары</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                    <a href="{{ path('product_show', {'id': product.id}) }}">Показать</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Не найдено записей</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

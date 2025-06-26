@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Новый товар</h1>
+
+    {{ include('product/_form.html.twig') }}
+
+    <a href="{{ path('product_manage') }}">Назад к списку</a>
+{% endblock %}
